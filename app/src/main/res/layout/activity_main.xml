@@ -10,23 +10,25 @@
 
     <LinearLayout
         android:id="@+id/llintro"
-        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@id/searchmynote"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/searchmynote">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:text="My Notes"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -34,51 +36,34 @@
         android:id="@+id/searchmynote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="2dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/mynotesrv"
         app:layout_constraintTop_toBottomOf="@id/llintro"
-        android:background="@drawable/searchviewstyle"
+        android:padding="4dp"
         >
-    <ImageView
-        android:layout_marginLeft="5dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/searchicon" />
-
-     <EditText
-         android:id="@+id/tvb"
-         android:layout_marginLeft="5dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:textStyle="bold"
-         android:textColor="@color/black"
-         android:textSize="25sp"
-         android:backgroundTint="@color/white"
-         android:fontFamily="casual"
-         android:textCursorDrawable="@drawable/textcursorstyle"
-         android:cursorVisible="true"
-         />
+        <SearchView
+            android:id="@+id/searchthenote"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llintro"
+            app:layout_constraintBottom_toTopOf="@id/mynotesrv"
+            android:queryHint="Search Note by title"
+            android:background="@drawable/customsearchviewholder"
+            />
 
     </LinearLayout>
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mynotesrv"
-        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchmynote"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/searchmynote" />
 
     <LinearLayout
         android:id="@+id/addanote"
