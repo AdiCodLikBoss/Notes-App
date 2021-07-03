@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_background"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llintro"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/searchmynote">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="My Notes"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchmynote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mynotesrv"
+        app:layout_constraintTop_toBottomOf="@id/llintro"
+        android:background="@drawable/searchviewstyle"
+        >
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/searchicon" />
+
+     <EditText
+         android:id="@+id/tvb"
+         android:layout_marginLeft="5dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textStyle="bold"
+         android:textColor="@color/black"
+         android:textSize="25sp"
+         android:backgroundTint="@color/white"
+         android:fontFamily="casual"
+         android:textCursorDrawable="@drawable/textcursorstyle"
+         android:cursorVisible="true"
+         />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mynotesrv"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchmynote"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/addanote"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/addanotebuttonstyle"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/pencil2"
+            />
+
+        
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

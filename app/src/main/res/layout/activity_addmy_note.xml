@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="20dp"
+    tools:context=".AddmyNote">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Add my note"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/titleofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/notetitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="title"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*required"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Date"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/dateofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/notedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="date(dd/mm/yyyy)"
+                    android:inputType="date"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*required"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Description"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/descriptionofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/notedescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="description"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*required"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Color of the Note"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/notecolor1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notecolor2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notecolor3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notecolor4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notecolor5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notecolor6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/notecolorholder"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notecolor6" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addmynote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/aclonica"
+            android:padding="15dp"
+            android:text="Add the Note"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>

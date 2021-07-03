@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".UpdateMyNote">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Update my note"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/updatedtitleofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/updatednotetitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="title"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Date"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/updateddateofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/updatednotedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="date(dd/mm/yyyy)"
+                    android:inputType="date"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Description"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/updateddescriptionofnote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mycustomedittext1"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/updatednotedescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="casual"
+                    android:hint="description"
+                    android:textCursorDrawable="@drawable/customedittextcursor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/updatemynote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/aclonica"
+            android:padding="15dp"
+            android:text="Update the Note"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>
