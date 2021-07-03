@@ -3,10 +3,14 @@ package com.example.todo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.todo.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
     private lateinit var binding: ActivityMainBinding
@@ -28,6 +32,38 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
         if (myList.size > 0) {
             setupmyrv(myList)
         }
+        val dt = this
+
+        binding.searchthenote.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                val updlist: MutableList<Note> = mutableListOf()
+                val str = newText!!.toLowerCase(Locale.getDefault())
+                val m = str.length
+                val currlist = db.View_Notes()
+                if (m > 0) {
+                    currlist.forEach {
+                        val len = it.title.length
+                        if (len >= m) {
+                            val str1 = it.title.toLowerCase(Locale.getDefault())
+                            if (str1.substring(0, m) == str) {
+                                updlist.add(it)
+                            }
+                        }
+                    }
+                    setupmyrv(updlist)
+                } else {
+                    setupmyrv(currlist)
+                }
+                return false
+            }
+
+        })
+
     }
 
     fun setupmyrv(myList: MutableList<Note>) {
