@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.Toast
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.addanote.setOnClickListener {
+            closeKeyboard()
             val intent = Intent(this, AddmyNote::class.java)
             startActivity(intent)
         }
@@ -32,8 +34,6 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
         if (myList.size > 0) {
             setupmyrv(myList)
         }
-        val dt = this
-
         binding.searchthenote.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
                 val m = str.length
                 val currlist = db.View_Notes()
                 if (m > 0) {
+                    binding.searchthenote.setBackgroundResource(R.drawable.customsearchviewholder2)
                     currlist.forEach {
                         val len = it.title.length
                         if (len >= m) {
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
                     }
                     setupmyrv(updlist)
                 } else {
+                    binding.searchthenote.setBackgroundResource(R.drawable.customsearchviewholder)
                     setupmyrv(currlist)
                 }
                 return false
@@ -69,6 +71,16 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
     fun setupmyrv(myList: MutableList<Note>) {
         val myRVAdapter = NotesRVAdapter(myList, this)
         binding.mynotesrv.adapter = myRVAdapter
+    }
+
+    fun closeKeyboard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val hidetheKeyboard =
+                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            hidetheKeyboard.hideSoftInputFromWindow(view.windowToken, 0)
+
+        }
     }
 
     override fun onItemClick(view: View, position: Int) {

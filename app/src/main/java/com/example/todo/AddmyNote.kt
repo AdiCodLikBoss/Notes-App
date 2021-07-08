@@ -108,7 +108,7 @@ class AddmyNote : AppCompatActivity() {
         val view = this.currentFocus
         if (view != null) {
             val hidetheKeyboard =
-                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             hidetheKeyboard.hideSoftInputFromWindow(view.windowToken, 0)
 
         }

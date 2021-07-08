@@ -12,12 +12,12 @@ class MySplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_splash_screen)
         val todoimg = findViewById<ImageView>(R.id.todoimg)
-        val animation= AnimationUtils.loadAnimation(this,R.anim.animation1)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.animation1)
         todoimg.startAnimation(animation)
         Handler().postDelayed({
-                              val intent = Intent(this,MainActivity::class.java)
-                              startActivity(intent)
-        },4000)
-
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 4000)
     }
 }
