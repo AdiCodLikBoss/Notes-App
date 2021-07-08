@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.todo.databinding.ActivityMainBinding
 import java.util.*
@@ -25,8 +26,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
             val intent = Intent(this, AddmyNote::class.java)
             startActivity(intent)
         }
-        binding.mynotesrv.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        binding.mynotesrv.layoutManager = LinearLayoutManager(this)
         db = NotesDB(this)
         myList = db.View_Notes()
         if (myList.size > 0) {
