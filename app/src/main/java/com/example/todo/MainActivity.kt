@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
         binding.addanote.setOnClickListener {
             closeKeyboard()
             val intent = Intent(this, AddmyNote::class.java)
+
             startActivity(intent)
         }
         binding.mynotesrv.layoutManager = LinearLayoutManager(this)
