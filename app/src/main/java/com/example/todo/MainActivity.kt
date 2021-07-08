@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
         val deletebtn = view.findViewById<ImageView>(R.id.deletethenote)
         val curr_Item = myList[position]
         updatebtn.setOnClickListener {
+            closeKeyboard()
             val intent = Intent(this, UpdateMyNote::class.java)
             intent.putExtra("title1", curr_Item.title)
             intent.putExtra("date1", curr_Item.date)
@@ -98,6 +99,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
             startActivity(intent)
         }
         deletebtn.setOnClickListener {
+            closeKeyboard()
             var success = db.Delete_Note(curr_Item)
             if (success != -1) {
                 myList = db.View_Notes()
