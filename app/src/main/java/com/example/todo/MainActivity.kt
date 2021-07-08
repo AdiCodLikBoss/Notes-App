@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
                 val m = str.length
                 val currlist = db.View_Notes()
                 if (m > 0) {
+                    binding.searchthenote.setBackgroundResource(R.drawable.customsearchviewholder2)
                     currlist.forEach {
                         val len = it.title.length
                         if (len >= m) {
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.onmyItemClickListener {
                     }
                     setupmyrv(updlist)
                 } else {
+                    binding.searchthenote.setBackgroundResource(R.drawable.customsearchviewholder)
                     setupmyrv(currlist)
                 }
                 return false
